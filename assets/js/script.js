@@ -6,3 +6,8 @@ navOpen.addEventListener('click', function(){
     navOpen.classList.toggle('bx-x');
     navbarWrapper.classList.toggle('active');
 });
+
+// pindah menu-page
+function halamanMenu() {
+    window.location.href = 'menu-page.html';
+}
