@@ -202,7 +202,8 @@ section {
 .shop-title span,
 .variants-title span,
 .login-title span,
-.about-title span {
+.about-title span,
+.contact-title span {
   color: var(--second-color);
 }
 
@@ -650,7 +651,7 @@ input[type="submit"]:active
   width: 40%;
 }
 
-.about-pic{
+.about-pic {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -719,6 +720,118 @@ input[type="submit"]:active
   font-size: 3rem;
   text-align: center;
   padding: 2rem 2rem;
+}
+
+/* Contact us page */
+#contact {
+  margin: 5rem 8rem;
+  font-family: var(--fourth-font);
+}
+.contact-title {
+  font-family: var(--third-font);
+  font-size: 4rem;
+  font-weight: 400;
+  padding-bottom: 2rem;
+}
+
+.contact-text {
+  font-family: var(--second-font);
+  font-size: 1.5rem;
+}
+
+.contact-pic {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-pic img {
+  width: 544px;
+  height: 476px;
+  flex-shrink: 0;
+}
+
+.column-contact {
+  width: 50%;
+  padding: 1rem 4rem 3rem;
+}
+
+.contact-form {
+  display: flex;
+  margin-top: 10rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1.3rem;
+}
+
+.form-group label {
+  font-size: 1.5rem;
+}
+
+.form-group input {
+  width: 90%;
+  height: 42px;
+  border-radius: 19px;
+  background: white;
+  color: var(--second-color);
+  border: none;
+  outline: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  width: 90%;
+  border-radius: 19px;
+  background: white;
+  color: var(--second-color);
+  border: none;
+  outline: none;
+  padding: 2rem 1.5rem;
+  font-size: 1rem;
+}
+
+.contact-form form button {
+  width: 90%;
+  height: 42px;
+  border-radius: 19px;
+  background: var(--third-color);
+  color: white;
+  border: none;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.contact-form form button[type="submit"]:active
+{
+  opacity: 0.6;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5rem;
+}
+
+.location-info,
+.call-info,
+.email-info {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin: 1.5rem 3rem;
+  font-size: 2rem;
+}
+
+.location-info i,
+.call-info i,
+.email-info i {
+  font-size: 3rem;
 }
 
 /* Menu Variants */
