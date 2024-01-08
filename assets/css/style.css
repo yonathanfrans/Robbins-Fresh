@@ -1,16 +1,17 @@
-@import url("https://fonts.googleapis.com/css2?family=Modak&family=Righteous&family=Roboto&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=Plus+Jakarta+Sans&family=Poppins&family=Righteous&family=Roboto&display=swap');
 
 :root {
   --main-color: #ffb9b936;
   --second-color: #cc5c5c;
-  --bg-color: #fbecec;
+  --bg-color: #FBECEC;
   --third-color: #993e3e;
   --fourth-color: #ffb9b9;
 
   --main-font: "Righteous", sans-serif;
   --second-font: "Roboto", sans-serif;
-  --title-font: "Modak", sans-serif;
+  --third-font: "Modak", sans-serif;
   --fourth-font: "Plus Jakarta Sans", sans-serif;
+  --fifth-font: "Poppins", sans-serif;
 }
 
 * {
@@ -199,7 +200,8 @@ section {
 .why-title span,
 .featured-title span,
 .shop-title span,
-.variants-title span {
+.variants-title span,
+.login-title span {
   color: var(--second-color);
 }
 
@@ -454,6 +456,171 @@ footer {
   width: 60%;
 }
 
+/* login page */
+#login {
+  margin: 2rem 1rem;
+}
+
+.login-page {
+  background-color: var(--fourth-color);
+}
+
+.navbar-login {
+  position: relative;
+  margin: auto 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+}
+
+.login-title a {
+  font-size: 3rem;
+  color: white;
+  font-family: var(--third-font);
+  font-weight: 400;
+}
+
+.form-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 5rem;
+  margin: 4rem 2rem;
+  width: 90%;
+  height: 90%;
+}
+
+.login-img {
+  width: 700px;
+  height: 550px;
+  text-align: center;
+}
+
+.login-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.form-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2.5rem;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px var(--second-color);
+  width: 400px;
+  height: 450px;
+  background: var(--main-color);
+}
+
+.form-content {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 40px;
+  font-family: var(--fifth-font);
+}
+
+.form-content h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.inputBox {
+  position: relative;
+  width: 100%;
+}
+
+.inputBox input {
+  position: relative;
+  width: 100%;
+  background: white;
+  border: none;
+  outline: none;
+  padding: 25px 10px 7.5px;
+  border-radius: 4px;
+  color: var(--second-color);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.inputBox label {
+  position: absolute;
+  left: 0;
+  padding: 15px 10px;
+  font-style: normal;
+  color: var(--second-color);
+  transition: 0.5s;
+  pointer-events: none;
+}
+
+.inputBox input:focus ~ label, .inputBox input:valid ~ label {
+  transform: translateY(-7.5px);
+  font-size: 0.8em;
+}
+
+.inputBox .icon-form {
+  position: absolute;
+  z-index: 1000;
+  right: 0.5rem;
+  font-size: 1.5rem;
+  padding: 10px 10px;
+  color: var(--second-color);
+}
+
+.inputBox #showPasswordLogin,
+.inputBox #showPasswordRegister {
+  cursor: pointer;
+}
+
+.form-links {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-links a {
+  color: var(--second-color);
+}
+
+.form-links p {
+  font-size: 1rem;
+  color: var(--second-color);
+}
+
+.inputBox input[type="submit"] {
+  padding: 10px;
+  background: var(--third-color);
+  color: white;
+  font-size: 1.35rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+
+input[type="submit"]:active
+{
+  opacity: 0.6;
+}
+
+#signup {
+  display: none;
+}
+
 /* Menu Variants */
 #variants {
   margin: 4rem 8rem;
@@ -641,102 +808,4 @@ footer {
     color: var(--second-color);
     padding-right: 1.5rem;
   }
-}
-/* login sign in */
-.body-login {
-  display: flex;
-  justify-content: center;
-  gap: 0.1rem;
-  align-items: center;
-  /* margin: 7rem 0; */
-}
-.input-box {
-  width: 550px;
-  height: 70px;
-  margin: 2rem 0;
-}
-
-.form-login h1 {
-  margin-bottom: 6rem;
-}
-
-.input-box input {
-  width: 100%;
-  height: 100%;
-  border-radius: 8px;
-  border-color: white;
-  padding-left: 1rem;
-}
-.submit-button {
-  width: 550px;
-  height: 70px;
-  top: 345.88px;
-  left: 972.3px;
-  margin-top: 3rem;
-  background-color: #993e3e;
-  color: white;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  border-radius: 8px;
-}
-
-.input-box ::placeholder {
-  color: #cc5c5c;
-}
-.navbar .navbar-logo {
-  color: white;
-  text-align: center;
-  margin-top: 20px;
-  margin-left: 10px;
-  font-size: 48px;
-  font-weight: 400;
-  line-height: normal;
-  font-family: "Modak", sans-serif;
-  justify-content: center;
-}
-
-.navbar .navbar-logo span {
-  color: #cc5c5c;
-  font-family: "Modak", sans-serif;
-}
-.nodecoration {
-  text-decoration: none;
-}
-
-.container-contenter {
-  display: flex;
-  justify-content: center;
-  border: 2px solid black;
-  width: 65%;
-}
-.container-contenter img {
-  width: 90%;
-  height: 10%;
-  flex-shrink: 0;
-  margin-right: 20rem;
-}
-
-.wrapper-image {
-  display: flex;
-  margin-left: 5rem;
-}
-
-.gambar-content {
-  width: 101px;
-  height: 103px;
-}
-
-.form-login {
-  border: 2px solid red;
-}
-.form-login h1 {
-  color: #fff2f2;
-  font-size: 40px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-.form-box {
-  border: 2px solid yellow;
-  width: 35%;
 }
