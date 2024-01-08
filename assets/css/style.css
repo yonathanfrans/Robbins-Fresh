@@ -201,7 +201,8 @@ section {
 .featured-title span,
 .shop-title span,
 .variants-title span,
-.login-title span {
+.login-title span,
+.about-title span {
   color: var(--second-color);
 }
 
@@ -298,7 +299,6 @@ section {
 /* featured section */
 #featured {
   background: linear-gradient(180deg, #ffe8e8 0%, rgba(221, 160, 160, 0) 100%);
-  background-size: 500vh;
   margin: 0;
   padding: 2rem 0;
 }
@@ -619,6 +619,106 @@ input[type="submit"]:active
 
 #signup {
   display: none;
+}
+
+/* About us */
+#about {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 8rem 5rem;
+  gap: 5rem;
+}
+
+.about-text {
+  align-self: center;
+}
+
+.about-title {
+  font-size: 5rem;
+  font-weight: 400;
+  margin-bottom: 3rem;
+}
+
+.about-text p {
+  font-size: 2rem;
+  font-family: var(--second-font);
+  padding: 2rem 0;
+}
+
+.about-box {
+  width: 40%;
+}
+
+.about-pic{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-pic img {
+  width: 730px;
+  height: 600px;
+  flex-shrink: 0;
+}
+
+#about-content {
+  background: linear-gradient(180deg, #FCCBCB 65.62%, rgba(249, 217, 217, 0.00) 100%);
+  margin: 0;
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+
+.circle-containers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10rem;
+  padding-bottom: 8rem;
+  margin: 5rem auto;
+}
+
+.circle-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.circle {
+  width: 250px; 
+  height: 250px; 
+  background-color: white;
+  border-radius: 50%;
+}
+
+.circle-content p {
+  font-family: var(--second-font);
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding-top: 1.5rem;
+}
+
+#about-quote {
+  margin-top: 4rem;
+}
+
+.quote-containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-quote {
+  font-size: 7rem;
+}
+
+.quote {
+  font-size: 3rem;
+  text-align: center;
+  padding: 2rem 2rem;
 }
 
 /* Menu Variants */
