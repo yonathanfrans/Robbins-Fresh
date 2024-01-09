@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robbins'Fresh</title>
+
+    <!-- My Css -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="payment-page">
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="container nav-wrapper">
+                <a href="index.html" class="logo">
+                    <img src="./assets/img/logo/logo-nav.png" alt="logo-nav">                     
+                </a>
+                <div class="navbar-wrapper">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="index.html#menu" class="nav-link">Menu</a></li>
+                        <li class="nav-item"><a href="index.html#featured" class="nav-link">Featured</a></li>
+                        <li class="nav-item"><a href="about.html#about" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="index.html#shop" class="nav-link">Shop</a></li>
+                    </ul>
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="payment">
+            <div class="payment-containers">
+                <div class="slideshow-container">
+                    <div class="mySlides fade">
+                        <img src="./assets/img/featured-box2.png" alt="">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="./assets/img/featured-box3.png" alt="">
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="./assets/img/featured-box1.png" alt="">
+                    </div>
+        
+                    <div class="itemsDot">
+                        <span class="dot" onclick="currentSlide(1)"></span>
+                        <span class="dot" onclick="currentSlide(2)"></span>
+                        <span class="dot" onclick="currentSlide(3)"></span>
+                    </div>
+                    
+                    <div class="numbertext">Items 1 of 3</div>
+                    <div class="text">Es Krim Cokelat</div>
+                    <div class="payment-price">Rp. 120.000</div>
+        
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+
+                <div class="payment-details">
+                    <h1 class="payment-title">Payment Details</h1>
+                    <form action="#">
+                        <div class="payment-box">
+                            <input type="text" name="metodePembayaran" required>
+                            <label for="metodePembayaran">Metode Pembayaran</label>
+                        </div>
+                        <div class="payment-box">
+                            <input type="tel" name="notelp" required>
+                            <label for="notelp">No. Telp</label>
+                        </div>
+                        <div class="payment-box">
+                            <input type="text" name="alamat" required>
+                            <label for="alamat">Alamat Pengiriman</label>
+                        </div>
+                        <button type="submit" id="paymentSubmit">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <div class="success" id="Success">
+            <div class="title-success">
+                <i class='bx bxs-check-circle'></i>
+                <h1>Pembayaran sudah berhasil!</h1>
+            </div>
+            <div class="step-containers">
+                <div class="step-list">
+                    <i class='bx bxs-check-circle'></i>
+                    <div class="step-text">
+                        <p>Metode Pembayaran</p>
+                        <p>Bca- ******999</p>
+                    </div>
+                </div>
+                <div class="vl"></div>
+                <div class="step-list">
+                    <i class='bx bxs-check-circle'></i>
+                    <div class="step-text">
+                        <p>Data Tanggal Pemesanan</p>
+                        <p>19-10-2023</p>
+                    </div>
+                </div>
+                <div class="vl"></div>
+                <div class="step-list">
+                    <i class='bx bxs-check-circle'></i>
+                    <div class="step-text">
+                        <p>Data Customer</p>
+                        <p>No hp : 08122222222</p>
+                    </div>
+                </div>
+                <div class="vl"></div>
+                <div class="step-list">
+                    <i class='bx bx-loader-circle'></i>
+                    <div class="step-text">
+                        <p>Pesanan Selesai</p>
+                        <p>Sedang disiapkan</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </main>
+    
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>

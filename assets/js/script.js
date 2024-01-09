@@ -70,3 +70,65 @@ if (registerLink && loginLink && signupForm && signinForm && loginForm) {
     });
 }
 
+// Menampilkan isi pesan berhasil pada payment form
+const paymentBtn = document.getElementById('paymentSubmit');
+const paymentForm = document.getElementById('payment');
+const successMsg = document.getElementById('Success');
+
+
+if (paymentBtn && successMsg) {
+    paymentBtn.addEventListener('click', function(event) {
+        event.preventDefault();
+        
+        const inputs = paymentForm.querySelectorAll('input');
+
+        let allInputsFilled = true;
+        inputs.forEach(input => {
+            if (input.value === '') {
+                allInputsFilled = false;
+            }
+        });
+
+        if (allInputsFilled) {
+            successMsg.style.display = 'flex';
+            paymentForm.style.display = 'none';
+            
+        } else {
+            alert('Harap isi semua form terlebih dahulu.');
+        }
+    });
+};
+
+// slideshow payment
+let slideIndex = 1;
+showSlides(slideIndex);
+
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  let numbertext = document.getElementsByClassName("numbertext")[0];
+
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+
+  slides[slideIndex-1].style.display = "flex";
+  dots[slideIndex-1].className += " active";
+  numbertext.textContent = "Items " + slideIndex + " of " + slides.length;
+}

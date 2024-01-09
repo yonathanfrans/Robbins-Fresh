@@ -541,12 +541,14 @@ form {
   gap: 25px;
 }
 
-.inputBox {
+.inputBox,
+.payment-box {
   position: relative;
   width: 100%;
 }
 
-.inputBox input {
+.inputBox input,
+.payment-box input {
   position: relative;
   width: 100%;
   background: white;
@@ -559,7 +561,8 @@ form {
   font-size: 1rem;
 }
 
-.inputBox label {
+.inputBox label,
+.payment-box label {
   position: absolute;
   left: 0;
   padding: 15px 10px;
@@ -569,7 +572,8 @@ form {
   pointer-events: none;
 }
 
-.inputBox input:focus ~ label, .inputBox input:valid ~ label {
+.inputBox input:focus ~ label, .inputBox input:valid ~ label,
+.payment-box input:focus ~ label, .payment-box input:valid ~ label {
   transform: translateY(-7.5px);
   font-size: 0.8em;
 }
@@ -613,7 +617,8 @@ form {
   cursor: pointer;
 }
 
-input[type="submit"]:active
+input[type="submit"]:active,
+button[type="submit"]:active
 {
   opacity: 0.6;
 }
@@ -846,17 +851,15 @@ input[type="submit"]:active
   align-items: center;
   justify-content: center;
   right: 0;
+  background: var(--fourth-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
 }
 
 .shop-cart a {
-  border: 0.1rem solid var(--fourth-color);
-  background: var(--fourth-color);
-  border-radius: 50%;
-  width: 45px;
-  height: 40px;
-  font-size: 2rem;
-  color: white;
-  text-align: center;
+  font-size: 1.8rem;
+  color: white; 
 }
 
 .variants-title {
@@ -917,9 +920,9 @@ input[type="submit"]:active
 
 .switch-field {
   display: flex;
-  margin-bottom: 36px;
+  margin-bottom: 26px;
   overflow: hidden;
-  gap: 1.5rem;
+  gap: 1.3rem;
 }
 
 .switch-field input {
@@ -927,8 +930,9 @@ input[type="submit"]:active
   clip: rect(0, 0, 0, 0);
   height: 1px;
   width: 1px;
-  border: 0;
+  border: none;
   overflow: hidden;
+  outline: none;
 }
 
 .switch-field label {
@@ -971,6 +975,222 @@ input[type="submit"]:active
   padding: 10px 40px 10px 40px;
   font-size: 1rem;
 }
+
+/* payment-page */
+.payment-page {
+  background-color: linear-gradient(180deg, #FBFFFA 0%, #FFA8A8 89.58%);
+}
+
+#payment {
+  margin: 10rem 2rem;
+}
+
+.payment-containers {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 29px;
+  background: #FF8080;
+}
+
+.slideshow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 31px;
+  background: #993E3E;
+  width: 50%;
+  padding: 2rem;
+  margin: 4rem 2rem;
+}
+
+.mySlides {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 20px;
+}
+
+.mySlides img {
+  width: 100%; 
+  height: auto; 
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: black;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 1; 
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 0 3px 3px 0;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.numbertext,
+.text,
+.payment-price {
+    margin-top: 1rem;
+    color: #f2f2f2;
+    font-size: 15px;
+    width: 100%;
+    padding: 0.1rem 1rem;
+    font-family: var(--second-font);
+}
+
+.text {
+  color: #0B0A0A;
+}
+
+.itemsDot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 1rem 0.5rem;
+  background-color: #bbb;
+  border-radius: 50%;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
+
+.payment-details {
+  border-radius: 31px;
+  background: var(--fourth-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+  padding: 2rem;
+  margin: 4rem 2rem;
+  font-family: var(--fourth-font);
+}
+
+.payment-box {
+  margin: 1rem auto;
+}
+
+.payment-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.payment-box label {
+  color: #0B0A0A;
+}
+
+.payment-box input {
+  background: var(--fourth-color);
+  color: #0B0A0A;
+  border-bottom: 3px solid #0B0A0A;
+}
+
+.payment-details form button {
+  width: 120px;
+  border-radius: 27.5px;
+  background: var(--second-color);
+  border: none;
+  font-size: 1.2rem;
+  color: #FFFFFF;
+  font-family: var(--main-font);
+  padding: 0.5rem 1.7rem;
+  margin: 2rem auto;
+}
+
+/* payment success */
+.success {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 31px;
+  background: #FFF;
+  width: 700px;
+  margin: 4rem auto;
+}
+
+.title-success {
+  text-align: center;
+  margin: 2rem auto 4rem;
+}
+
+.title-success h1 {
+  font-family: var(--fourth-font);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.success i {
+  font-size: 5rem;
+  color: #70F294;
+}
+
+.step-containers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 3rem;
+}
+
+.step-list {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.step-text {
+  line-height: 3;
+  font-size: 1.2rem;
+  font-family: var(--second-font);
+}
+
+.vl {
+  border-left: 3px solid #70F294;
+  height: 75px;
+  margin-left: 2.5rem;
+}
+
 
 /* Responsive */
 @media screen and (max-width: 991px) {
