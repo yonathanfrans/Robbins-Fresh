@@ -18,6 +18,10 @@ function halamanPayment() {
     window.location.href = "payment.html";
 }
 
+function halamanLogin() {
+    window.location.href = "login.html";
+}
+
 // menampilkan / hide password pada form login dan register
 document.addEventListener('DOMContentLoaded', function() {
     var showPasswordLogin = document.getElementById('showPasswordLogin');
