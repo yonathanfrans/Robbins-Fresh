@@ -34,7 +34,7 @@
         <section id="variants">
             <h1 class="variants-title"><span>Ice Cream</span> Variants</h1>
             <div class="shop-cart">
-                <a href="#"><i class='bx bx-cart'></i></a>
+                <i class='bx bx-cart'></i>
             </div>
             <div class="box-containers">
                 <div class="variants-box">
@@ -167,8 +167,77 @@
         </section>
 
         <aside>
-            
+            <div class="cartTab">
+                <div class="title-cart">
+                    <i class='bx bxs-x-circle' onclick="hideCart()"></i>
+                    <h1><span>Your </span>Cart</h1>
+                </div>
+                <div class="list-cart">
+                    <div class="item-cart">
+                        <div class="img-item">
+                            <img src="./assets/img/featured-box3.png" alt="cart image">
+                        </div>
+                        <div class="item-info">
+                            <p>eskrim Caramel Swirl</p>
+                            <p>Small</p>
+                            <p class="item-price">Rp - 25.000</p>
+                        </div>
+                        <div class="quantity">
+                            <span class="minus"><i class='bx bxs-minus-square'></i></span>
+                            <span class="quantity-value">1</span>
+                            <span class="plus"><i class='bx bxs-plus-square'></i></span>
+                        </div>
+                    </div>
+                    <div class="item-cart">
+                        <div class="img-item">
+                            <img src="./assets/img/featured-box3.png" alt="cart image">
+                        </div>
+                        <div class="item-info">
+                            <p>eskrim Caramel Swirl</p>
+                            <p>Large</p>
+                            <p class="item-price">Rp - 25.000</p>
+                        </div>
+                        <div class="quantity">
+                            <span class="minus"><i class='bx bxs-minus-square'></i></span>
+                            <span class="quantity-value">1</span>
+                            <span class="plus"><i class='bx bxs-plus-square'></i></span>
+                        </div>
+                    </div>
+                    <div class="item-cart">
+                        <div class="img-item">
+                            <img src="./assets/img/featured-box3.png" alt="cart image">
+                        </div>
+                        <div class="item-info">
+                            <p>eskrim Caramel Swirl</p>
+                            <p>Large</p>
+                            <p class="item-price">Rp - 25.000</p>
+                        </div>
+                        <div class="quantity">
+                            <span class="minus"><i class='bx bxs-minus-square'></i></span>
+                            <span class="quantity-value">1</span>
+                            <span class="plus"><i class='bx bxs-plus-square'></i></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="price-cart">
+                    <div class="subtotal">
+                        <p>Subtotal</p>
+                        <span>Rp - 25.000</span>
+                    </div>
+                    <div class="total-sales-tax">
+                        <p>Total sales tax</p>
+                        <span>Rp - 25.000</span>
+                    </div>
+                    <div class="total">
+                        <p>Total</p>
+                        <span>Rp - 25.000</span>
+                    </div>
+                </div>
+                <button type="submit" onclick="halamanPayment()">Continue to payment</button>
+            </div>
         </aside>
     </main>
+
+    <script src="/assets/js/script.js"></script>
 </body>
 </html>

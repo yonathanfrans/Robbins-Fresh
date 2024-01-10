@@ -14,6 +14,10 @@ function halamanMenu() {
     window.location.href = 'menu-page.html';
 }
 
+function halamanPayment() {
+    window.location.href = "payment.html";
+}
+
 // menampilkan / hide password pada form login dan register
 document.addEventListener('DOMContentLoaded', function() {
     var showPasswordLogin = document.getElementById('showPasswordLogin');
@@ -119,16 +123,72 @@ function showSlides(n) {
   let dots = document.getElementsByClassName("dot");
   let numbertext = document.getElementsByClassName("numbertext")[0];
 
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
+  if (slides && dots && numbertext) {
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+    
+      slides[slideIndex-1].style.display = "flex";
+      dots[slideIndex-1].className += " active";
+      numbertext.textContent = "Items " + slideIndex + " of " + slides.length;
+    }
   }
 
-  slides[slideIndex-1].style.display = "flex";
-  dots[slideIndex-1].className += " active";
-  numbertext.textContent = "Items " + slideIndex + " of " + slides.length;
+
+// menampilkan shopping cart
+const shopCart = document.querySelector('.shop-cart');
+const aside = document.querySelector('aside');
+const closeCart = document.querySelector('.title-cart i');
+
+if (shopCart && aside) {
+    shopCart.addEventListener('click', function(event) {
+        event.preventDefault();
+        aside.classList.toggle('show-aside');
+    });
+};
+
+// menutup shopping cart
+if (shopCart && aside && closeCart) {
+    document.addEventListener('click', function(event) {
+        const isClickInsideAside = aside.contains(event.target);
+        const isClickOnCart = shopCart.contains(event.target);
+        const isClickOnCloseIcon = closeCart.contains(event.target);
+    
+        if (!isClickInsideAside && !isClickOnCart && !isClickOnCloseIcon) {
+            aside.classList.remove('show-aside');
+        }
+    });
 }
+
+function hideCart() {
+    const aside = document.querySelector('aside');
+    aside.classList.remove('show-aside');
+}
+
+// membuat fungsi quantity
+const minusButton = document.querySelector('.minus');
+const plusButton = document.querySelector('.plus');
+const quantityValue = document.querySelector('.quantity-value');
+
+if (minusButton && quantityValue) {
+    minusButton.addEventListener('click', function() {
+        let currentValue = parseInt(quantityValue.textContent);
+        if (currentValue > 1) {
+            currentValue--;
+            quantityValue.textContent = currentValue;
+        }
+    });
+};
+
+if (plusButton && quantityValue) {
+    plusButton.addEventListener('click', function() {
+        let currentValue = parseInt(quantityValue.textContent);
+        currentValue++;
+        quantityValue.textContent = currentValue;
+    });
+};

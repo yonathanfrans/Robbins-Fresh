@@ -203,7 +203,8 @@ section {
 .variants-title span,
 .login-title span,
 .about-title span,
-.contact-title span {
+.contact-title span,
+.title-cart span {
   color: var(--second-color);
 }
 
@@ -855,9 +856,10 @@ button[type="submit"]:active
   border-radius: 50%;
   width: 50px;
   height: 50px;
+  cursor: pointer;
 }
 
-.shop-cart a {
+.shop-cart i {
   font-size: 1.8rem;
   color: white; 
 }
@@ -974,6 +976,129 @@ button[type="submit"]:active
   text-align: center;
   padding: 10px 40px 10px 40px;
   font-size: 1rem;
+}
+
+aside {
+  display: none;
+}
+
+aside.show-aside {
+  display: block;
+  width: 550px;
+  height: 1250px;
+  background-color: #FFFFFF;
+  border-radius: 15px;
+  position: absolute;
+  inset-block: 0;
+  inset-inline-end: 0;
+  margin-top: 12rem;
+  transition: all 0.5s ease;
+  z-index: 1000;
+}
+
+.cartTab {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto 2rem;
+}
+
+.title-cart {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 4rem auto;
+}
+
+.title-cart i {
+  position: absolute;
+  left: 0;
+  margin-left: 1rem;
+  color: var(--fourth-color);
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.title-cart h1 {
+  font-size: 2rem;
+}
+
+.cartTab button {
+  background: var(--second-color);
+  color: #FFFFFF;
+  border-radius: 12px;
+  border: none;
+  padding: 2rem 3rem;
+  margin: 4rem auto;
+  font-size: 1.2rem;
+  font-family: var(--main-font);
+  cursor: pointer;
+}
+
+.list-cart {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.item-cart {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 2rem auto;
+  gap: 2rem;
+}
+
+.img-item {
+  border: 2px solid #292626;
+  border-radius: 16px;
+  text-align: center;
+  width: 120px;
+}
+
+.img-item img {
+  width: 80px;
+}
+
+.item-info {
+  line-height: 3;
+  font-size: 1.2rem;
+}
+
+.item-info .item-price {
+  color: var(--second-color);
+}
+
+.quantity span {
+  color: var(--second-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.price-cart {
+  border-radius: 9px;
+  background: #EAE8E8;
+  padding: 1rem 2rem;
+}
+
+.subtotal, 
+.total-sales-tax,
+.total {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  justify-content: space-between;
+  line-height: 3;
+}
+
+.subtotal span, 
+.total-sales-tax span,
+.total span {
+  color: var(--second-color);
+}
+
+.total {
+  border-top: 3px dashed;
 }
 
 /* payment-page */
