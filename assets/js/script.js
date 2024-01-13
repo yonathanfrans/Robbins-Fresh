@@ -175,24 +175,28 @@ function hideCart() {
 }
 
 // membuat fungsi quantity
-const minusButton = document.querySelector('.minus');
-const plusButton = document.querySelector('.plus');
-const quantityValue = document.querySelector('.quantity-value');
+const minusButtons = document.querySelectorAll('.minus');
+const plusButtons = document.querySelectorAll('.plus');
+const quantityValues = document.querySelectorAll('.quantity-value');
 
-if (minusButton && quantityValue) {
-    minusButton.addEventListener('click', function() {
-        let currentValue = parseInt(quantityValue.textContent);
-        if (currentValue > 1) {
-            currentValue--;
-            quantityValue.textContent = currentValue;
-        }
+if (minusButtons.length > 0 && quantityValues.length > 0) {
+    minusButtons.forEach(function (minusButton, index) {
+        minusButton.addEventListener('click', function () {
+            let currentValue = parseInt(quantityValues[index].textContent);
+            if (currentValue > 1) {
+                currentValue--;
+                quantityValues[index].textContent = currentValue;
+            }
+        });
     });
-};
+}
 
-if (plusButton && quantityValue) {
-    plusButton.addEventListener('click', function() {
-        let currentValue = parseInt(quantityValue.textContent);
-        currentValue++;
-        quantityValue.textContent = currentValue;
+if (plusButtons.length > 0 && quantityValues.length > 0) {
+    plusButtons.forEach(function (plusButton, index) {
+        plusButton.addEventListener('click', function () {
+            let currentValue = parseInt(quantityValues[index].textContent);
+            currentValue++;
+            quantityValues[index].textContent = currentValue;
+        });
     });
-};
+}
