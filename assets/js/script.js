@@ -10,16 +10,12 @@ if (navOpen && navbarWrapper) {
 }
 
 // pindah menu-page
-function halamanMenu() {
-    window.location.href = 'menu-page.html';
-}
-
-function halamanPayment() {
-    window.location.href = "payment.html";
+function halamanMenu(categoryId) {
+    window.location.href = 'menu-page.php?id=' + categoryId;
 }
 
 function halamanLogin() {
-    window.location.href = "login.html";
+    window.location.href = "login.php";
 }
 
 // menampilkan / hide password pada form login dan register

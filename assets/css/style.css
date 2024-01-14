@@ -881,7 +881,6 @@ button[type="submit"]:active
 
 .variants-box {
   padding: 1rem 0.5rem;
-  /* flex: 1; */
   border: 0.1rem solid var(--fourth-color);
   background: var(--fourth-color);
   border-radius: 25px;
@@ -919,10 +918,9 @@ button[type="submit"]:active
 }
 
 .variants-name {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
   margin-bottom: 1rem;
-  padding-left: 1.5rem;
 }
 
 .variants-text {

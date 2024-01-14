@@ -1,3 +1,11 @@
+<?php
+    require_once 'db_conn.php';
+
+    $sql_kategori = "SELECT id, nama FROM kategori";
+    $result_kategori = $conn->query($sql_kategori);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,21 +72,21 @@
         <section id="menu">
             <h1 class="menu-title">Ice Cream <span>Menu</span></h1>
             <div class="box-containers">
-                <div class="menu-box" onclick="halamanMenu()">
+                <?php
+                    if ($result_kategori->num_rows > 0) {
+                        while($row_kategori = $result_kategori->fetch_assoc()) {
+
+                ?>
+                <div class="menu-box" onclick="halamanMenu(<?php echo $row_kategori['id']; ?>)">
                     <img src="" alt="">
-                    <h1>Ice Cone</h1>
+                    <h1><?php echo $row_kategori["nama"]; ?></h1>
                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
                 </div>
-                <div class="menu-box" onclick="halamanMenu()">
-                    <img src="" alt="">
-                    <h1>Smooth serving</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                </div>
-                <div class="menu-box" onclick="halamanMenu()">
-                    <img src="" alt="">
-                    <h1>Scoop Delish</h1>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-                </div>
+        
+                <?php
+                        }
+                    }
+                ?>
             </div>
         </section>
 

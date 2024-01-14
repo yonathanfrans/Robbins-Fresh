@@ -13,7 +13,7 @@
       <nav class="navbar-login">
         <img src="./assets/img/Logo.png" alt="logo login">
         <div class="login-title">
-          <a href="#">ICE <span>CREAM</span></a>
+          <a href="home.php">ICE <span>CREAM</span></a>
         </div>
       </nav>
     </header>
@@ -28,7 +28,7 @@
           <div class="form-login">
             <div class="form-content" id="signin"> 
               <h2>Sign In</h2> 
-              <form action="#"> 
+              <form action="process.php" method="post"> 
 
                <div class="inputBox"> 
                 <span class="icon-form">
@@ -42,7 +42,7 @@
                 <span class="icon-form" id="showPasswordLogin">
                   <i class='bx bx-low-vision'></i>
                 </span>      
-                <input type="password" name="password" id="PasswordLogin" required> 
+                <input type="password" name="password" id="PasswordLogin" maxlength="8" required> 
                 <label for="password">Password</label> 
                </div> 
          
@@ -52,7 +52,7 @@
                </div> 
         
                <div class="inputBox">
-                <input type="submit" value="Login"> 
+                <input type="submit" name="login" value="Login"> 
                </div> 
 
               </form> 
@@ -60,7 +60,7 @@
 
              <div class="form-content" id="signup"> 
               <h2>Sign Up</h2> 
-              <form action="#"> 
+              <form action="process.php" method="post"> 
 
                 <div class="inputBox"> 
                   <span class="icon-form">
@@ -82,7 +82,7 @@
                 <span class="icon-form" id="showPasswordRegister">
                   <i class='bx bx-low-vision'></i>
                 </span>      
-                <input type="password" name="password" id="PasswordRegister" required> 
+                <input type="password" name="password" id="PasswordRegister" maxlength="8" required> 
                 <label for="password">Password</label> 
                </div> 
          
@@ -91,7 +91,7 @@
                </div> 
         
                <div class="inputBox">
-                <input type="submit" value="Register"> 
+                <input type="submit" name="register" value="Register"> 
                </div> 
 
               </form> 
@@ -103,6 +103,6 @@
 
 
     <!-- Script JS -->
-    <script src="./assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>

@@ -22,11 +22,11 @@
                 </a>
                 <div class="navbar-wrapper">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="index.html#menu" class="nav-link">Menu</a></li>
-                        <li class="nav-item"><a href="index.html#featured" class="nav-link">Featured</a></li>
-                        <li class="nav-item"><a href="about.html#about" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="index.html#shop" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="home.php#menu" class="nav-link">Menu</a></li>
+                        <li class="nav-item"><a href="home.php#featured" class="nav-link">Featured</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+                        <li class="nav-item"><a href="home.php#shop" class="nav-link">Shop</a></li>
                     </ul>
                     <a href="contact.html" class="btn-contact">Contact Us</a>
                 </div>
@@ -127,6 +127,6 @@
     </main>
     
 
-    <script src="/assets/js/script.js"></script>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
