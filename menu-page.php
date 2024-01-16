@@ -61,23 +61,24 @@
                             <h1 class="variants-name"><?php echo $row_varian['nama']; ?></h1>
                             <p class="variants-text"><?php echo $row_varian['deskripsi']; ?></p>
                             <div class="switch-field">
-                                <input type="radio" id="radio-one" name="switch-one" value="small" checked/>
-                                <label for="radio-one">Small</label>
-                                <input type="radio" id="radio-two" name="switch-one" value="large" />
-                                <label for="radio-two">Large</label>
+                                <input type="radio" id="radio-<?php echo $row_varian['id']; ?>-small" name="switch-<?php echo $row_varian['id']; ?>" value="Small" checked/>
+                                <label for="radio-<?php echo $row_varian['id']; ?>-small">Small</label>
+
+                                <input type="radio" id="radio-<?php echo $row_varian['id']; ?>-large" name="switch-<?php echo $row_varian['id']; ?>" value="Large" />
+                                <label for="radio-<?php echo $row_varian['id']; ?>-large">Large</label>
                             </div>
                         </div>
                     </div>
                     <div class="variants-price">
                         <p class="price">Rp. <?php echo $row_varian['harga']; ?></p>
-                        <a href="#" class="btn-price">Added To Cart</a>
+                        <a href="#" class="btn-price" onclick="addToCart(<?php echo $row_varian['id']; ?>, '<?php echo $row_varian['nama']; ?>', '<?php echo $row_varian['harga']; ?>', '<?php echo $row_varian['gambar']; ?>')">Added To Cart</a>
                     </div>
                 </div>
                 <?php 
                             }
                         }
                     }
-
+                    
                 ?>
             </div>
         </section>
@@ -89,64 +90,20 @@
                     <h1><span>Your </span>Cart</h1>
                 </div>
                 <div class="list-cart">
-                    <div class="item-cart">
-                        <div class="img-item">
-                            <img src="./assets/img/featured-box3.png" alt="cart image">
-                        </div>
-                        <div class="item-info">
-                            <p>eskrim Caramel Swirl</p>
-                            <p>Small</p>
-                            <p class="item-price">Rp - 25.000</p>
-                        </div>
-                        <div class="quantity">
-                            <span class="minus"><i class='bx bxs-minus-square'></i></span>
-                            <span class="quantity-value">1</span>
-                            <span class="plus"><i class='bx bxs-plus-square'></i></span>
-                        </div>
-                    </div>
-                    <div class="item-cart">
-                        <div class="img-item">
-                            <img src="./assets/img/featured-box3.png" alt="cart image">
-                        </div>
-                        <div class="item-info">
-                            <p>eskrim Caramel Swirl</p>
-                            <p>Large</p>
-                            <p class="item-price">Rp - 25.000</p>
-                        </div>
-                        <div class="quantity">
-                            <span class="minus"><i class='bx bxs-minus-square'></i></span>
-                            <span class="quantity-value">1</span>
-                            <span class="plus"><i class='bx bxs-plus-square'></i></span>
-                        </div>
-                    </div>
-                    <div class="item-cart">
-                        <div class="img-item">
-                            <img src="./assets/img/featured-box3.png" alt="cart image">
-                        </div>
-                        <div class="item-info">
-                            <p>eskrim Caramel Swirl</p>
-                            <p>Large</p>
-                            <p class="item-price">Rp - 25.000</p>
-                        </div>
-                        <div class="quantity">
-                            <span class="minus"><i class='bx bxs-minus-square'></i></span>
-                            <span class="quantity-value">1</span>
-                            <span class="plus"><i class='bx bxs-plus-square'></i></span>
-                        </div>
-                    </div>
+                    
                 </div>
                 <div class="price-cart">
                     <div class="subtotal">
                         <p>Subtotal</p>
-                        <span>Rp - 25.000</span>
+                        <span id="subtotalAmount">Rp. 0</span>
                     </div>
-                    <div class="total-sales-tax">
-                        <p>Total sales tax</p>
-                        <span>Rp - 25.000</span>
+                    <div class="total-discount">
+                        <p>Total Discount</p>
+                        <span id="totalDiscountAmount">10%</span>
                     </div>
                     <div class="total">
                         <p>Total</p>
-                        <span>Rp - 25.000</span>
+                        <span id="totalAmount">Rp. 0</span>
                     </div>
                 </div>
                 <button type="submit" onclick="halamanLogin()">Continue to payment</button>
@@ -154,6 +111,7 @@
         </aside>
     </main>
 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

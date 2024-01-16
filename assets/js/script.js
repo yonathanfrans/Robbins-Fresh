@@ -170,29 +170,105 @@ function hideCart() {
     aside.classList.remove('show-aside');
 }
 
-// membuat fungsi quantity
-const minusButtons = document.querySelectorAll('.minus');
-const plusButtons = document.querySelectorAll('.plus');
-const quantityValues = document.querySelectorAll('.quantity-value');
+var cartItems = [];
 
-if (minusButtons.length > 0 && quantityValues.length > 0) {
-    minusButtons.forEach(function (minusButton, index) {
-        minusButton.addEventListener('click', function () {
-            let currentValue = parseInt(quantityValues[index].textContent);
-            if (currentValue > 1) {
-                currentValue--;
-                quantityValues[index].textContent = currentValue;
-            }
-        });
-    });
+function addToCart(id, name, price, image) {
+    var selectedSize = $('input[name="switch-' + id + '"]:checked').val();
+
+    var item = {
+        id,
+        name,
+        size: selectedSize,
+        price,
+        image,
+        quantity: 1
+    };
+
+    cartItems.push(item);
+    updateCart();
 }
 
-if (plusButtons.length > 0 && quantityValues.length > 0) {
-    plusButtons.forEach(function (plusButton, index) {
-        plusButton.addEventListener('click', function () {
-            let currentValue = parseInt(quantityValues[index].textContent);
-            currentValue++;
-            quantityValues[index].textContent = currentValue;
-        });
-    });
+function updateCart() {
+
+    displayCartItems();
+
+    calculateTotals();
+}
+
+function displayCartItems() {
+    var listCart = document.querySelector('.list-cart');
+    listCart.innerHTML = '';
+
+    for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+
+        var cartItemHTML = `
+            <div class="item-cart">
+                <div class="id-item">${item.id}</div>
+                <div class="img-item">
+                    <img src="${item.image}" alt="cart image">
+                </div>
+                <div class="item-info">
+                    <p>${item.name}</p>
+                    <p>${item.size}</p>
+                    <p class="item-price">Rp.<span class="price-per-item">${item.price}</span></p>
+                </div>
+                <div class="quantity">
+                    <span class="minus" onclick="decrease(${item.id})"><i class='bx bxs-minus-square'></i></span>
+                    <span class="quantity-value quantity-${item.id}">${item.quantity}</span>
+                    <span class="plus" onclick="increase(${item.id})"><i class='bx bxs-plus-square'></i></span>
+                </div>
+            </div>
+        `;
+
+        listCart.innerHTML += cartItemHTML;
+    }
+}
+
+function calculateTotals() {
+    var subtotalAmount = 0;
+
+    for (var i = 0; i < cartItems.length; i++) {
+        var item = cartItems[i];
+        subtotalAmount += item.quantity * parseInt(item.price);
+    }
+
+    var totalDiscountAmount = subtotalAmount * 0.1; 
+    var totalAmount = subtotalAmount - totalDiscountAmount;
+
+    document.getElementById('subtotalAmount').innerText = 'Rp. ' + subtotalAmount.toFixed(2);
+    document.getElementById('totalDiscountAmount').innerText = 'Rp. ' + totalDiscountAmount.toFixed(2) + ' (10%)';
+    document.getElementById('totalAmount').innerText = 'Rp. ' + totalAmount.toFixed(2);
+}
+
+function decrease(id) {
+    const indexItem = cartItems.findIndex(i => i.id === id);
+    const quantityValue = $(`.quantity-${id}`);
+    let value = quantityValue.text();
+
+    if (value < 1) {
+        return false;
+    } else {
+        cartItems[indexItem].quantity = parseInt(value) - 1;
+    }
+
+    quantityValue.text(cartItems[indexItem].quantity);
+
+    calculateTotals();
+}
+
+function increase(id) {
+    const indexItem = cartItems.findIndex(i => i.id === id);
+    
+    const quantityValue = $(`.quantity-${id}`);
+    let value = quantityValue.text();
+    
+    if (value >= 0) {
+        cartItems[indexItem].quantity = parseInt(value) + 1;
+    }
+
+    quantityValue.text(cartItems[indexItem].quantity);
+
+    calculateTotals();
+
 }

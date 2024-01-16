@@ -619,7 +619,8 @@ form {
 }
 
 input[type="submit"]:active,
-button[type="submit"]:active
+button[type="submit"]:active,
+.btn-price:active
 {
   opacity: 0.6;
 }
@@ -902,6 +903,7 @@ button[type="submit"]:active
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .variants-pic img {
@@ -914,7 +916,7 @@ button[type="submit"]:active
 .variants-info {
   display: block;
   width: 55%;
-  padding: 1.2rem 0;
+  padding: 0.5rem;
 }
 
 .variants-name {
@@ -969,7 +971,7 @@ button[type="submit"]:active
 .variants-price {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin: 0.5rem auto;
   gap: 4rem;
 }
 
@@ -995,7 +997,7 @@ aside {
 aside.show-aside {
   display: block;
   width: 550px;
-  height: 1250px;
+  height: max-content;
   background-color: #FFFFFF;
   border-radius: 15px;
   position: absolute;
@@ -1063,11 +1065,16 @@ aside.show-aside {
   border: 2px solid #292626;
   border-radius: 16px;
   text-align: center;
-  width: 120px;
+  width: 130px;
+  height: 200px;
+  overflow: hidden;
 }
 
 .img-item img {
-  width: 80px;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 
 .item-info {
@@ -1085,6 +1092,10 @@ aside.show-aside {
   cursor: pointer;
 }
 
+.id-item {
+  display: none;
+}
+
 .price-cart {
   border-radius: 9px;
   background: #EAE8E8;
@@ -1092,7 +1103,7 @@ aside.show-aside {
 }
 
 .subtotal, 
-.total-sales-tax,
+.total-discount,
 .total {
   display: flex;
   flex-direction: row;
@@ -1102,7 +1113,7 @@ aside.show-aside {
 }
 
 .subtotal span, 
-.total-sales-tax span,
+.total-discount span,
 .total span {
   color: var(--second-color);
 }
