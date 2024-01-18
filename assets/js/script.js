@@ -272,3 +272,9 @@ function increase(id) {
     calculateTotals();
 
 }
+
+function halamanPayment() {
+    var data = JSON.stringify(cartItems);
+    window.location.href = "payment.php?data=" + encodeURIComponent(data);
+}
+

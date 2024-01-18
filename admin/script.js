@@ -76,3 +76,13 @@ switchMode.addEventListener('change', function () {
 		document.body.classList.remove('dark');
 	}
 })
+
+function showContent(contentId) {
+	// Semua elemen main content di-hide
+	document.getElementById('dashboardContent').style.display = 'none';
+	document.getElementById('orderContent').style.display = 'none';
+	document.getElementById('StockContent').style.display = 'none';
+
+	// Tampilkan main content sesuai dengan ID yang dipilih
+	document.getElementById(contentId).style.display = 'block';
+}

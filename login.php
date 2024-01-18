@@ -28,6 +28,11 @@
           <div class="form-login">
             <div class="form-content" id="signin"> 
               <h2>Sign In</h2> 
+              <?php
+                if (isset($loginError)) {
+                    echo "<p class='error-message'>$loginError</p>";
+                }
+              ?>
               <form action="process.php" method="post"> 
 
                <div class="inputBox"> 
@@ -60,6 +65,11 @@
 
              <div class="form-content" id="signup"> 
               <h2>Sign Up</h2> 
+              <?php
+                  if (isset($registerError)) {
+                      echo "<p class='error-message'>$registerError</p>";
+                  }
+              ?>
               <form action="process.php" method="post"> 
 
                 <div class="inputBox"> 

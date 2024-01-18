@@ -15,8 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Registrasi berhasil
             echo "<script>alert('Registrasi berhasil. Silakan login.'); window.location.href = 'login.php';</script>";
         } else {
-            // Registrasi gagal
-            echo "<script>alert('Registrasi gagal. Mohon coba lagi.');</script>";
+            $registerError = "Registrasi gagal. Mohon coba lagi.";
+            echo "<script>alert('$registerError'); window.location.href = 'login.php';</script>";
         }
     } elseif (isset($_POST['login'])) {
         // Proses Login
@@ -32,11 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $username;
 
             // Arahkan pengguna ke halaman lain
-            header("Location: payment.php");
+            // echo "<script type='text/javascript'>halamanPayment()</script>";
+            header("Location: home.php");
             exit();
+            
         } else {
-            // Login gagal
-            echo "<script>alert('Login gagal. Mohon cek kembali username dan password.');</script>";
+            $loginError = "Login gagal. Mohon cek kembali username dan password.";
+            echo "<script>alert('$loginError'); window.location.href = 'login.php';</script>";
         }
     }
 }

@@ -106,7 +106,7 @@
                         <span id="totalAmount">Rp. 0</span>
                     </div>
                 </div>
-                <button type="submit" onclick="halamanLogin()">Continue to payment</button>
+                <button type="submit" onclick="halamanPayment()">Continue to payment</button>
             </div>
         </aside>
     </main>

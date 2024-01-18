@@ -37,26 +37,29 @@
     <main>
         <section id="payment">
             <div class="payment-containers">
+            <?php
+                if (isset($_GET['data'])) {
+                    $data = json_decode(urldecode($_GET['data']), true);
+                }
+            ?>
                 <div class="slideshow-container">
+                <?php foreach ($data as $index => $item) : ?>
                     <div class="mySlides fade">
-                        <img src="./assets/img/featured-box2.png" alt="">
+                        <img src="<?php echo $item['image']; ?>" alt="">
                     </div>
-                    <div class="mySlides fade">
-                        <img src="./assets/img/featured-box3.png" alt="">
-                    </div>
-                    <div class="mySlides fade">
-                        <img src="./assets/img/featured-box1.png" alt="">
-                    </div>
+                <?php endforeach; ?>
+
         
                     <div class="itemsDot">
-                        <span class="dot" onclick="currentSlide(1)"></span>
-                        <span class="dot" onclick="currentSlide(2)"></span>
-                        <span class="dot" onclick="currentSlide(3)"></span>
+                        <?php foreach ($data as $index => $item) : ?>
+                            <span class="dot" onclick="currentSlide(<?php echo $index + 1; ?>)"></span>
+                        <?php endforeach; ?>
                     </div>
                     
-                    <div class="numbertext">Items 1 of 3</div>
-                    <div class="text">Es Krim Cokelat</div>
-                    <div class="payment-price">Rp. 120.000</div>
+                    <div class="numbertext">Items 1 of <?php echo count($data); ?></div>
+                    <div class="text"><?php echo $data[0]['name']; ?> - <?php echo $data[0]['quantity']; ?> items</div>
+                    <div class="payment-price">Rp. <?php echo $data[0]['quantity'] * $data[0]['price']; ?></div>
+                                
         
                     <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                     <a class="next" onclick="plusSlides(1)">&#10095;</a>
@@ -126,7 +129,7 @@
 
     </main>
     
-
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="assets/js/script.js"></script>
 </body>
 </html>
