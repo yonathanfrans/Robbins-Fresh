@@ -117,27 +117,30 @@ function currentSlide(n) {
   showSlides(slideIndex = n);
 }
 
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-  let numbertext = document.getElementsByClassName("numbertext")[0];
-
-  if (slides && dots && numbertext) {
-      if (n > slides.length) {slideIndex = 1}
-      if (n < 1) {slideIndex = slides.length}
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+document.addEventListener('DOMContentLoaded', function() {
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        let numbertext = document.getElementsByClassName("numbertext")[0];
+      
+        if (slides && dots && numbertext) {
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+      
+          slides[slideIndex-1].style.display = "flex"; // Error occurs here
+          dots[slideIndex-1].className += " active";
+          numbertext.textContent = "Items " + slideIndex + " of " + slides.length;
+        }
       }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-    
-      slides[slideIndex-1].style.display = "flex";
-      dots[slideIndex-1].className += " active";
-      numbertext.textContent = "Items " + slideIndex + " of " + slides.length;
-    }
-  }
+      
+});
 
 
 // menampilkan shopping cart

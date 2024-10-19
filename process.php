@@ -1,3 +1,5 @@
+<script src="assets/js/script.js"></script>
+
 <?php
 include 'db_conn.php';
 
@@ -32,8 +34,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $username;
 
             // Arahkan pengguna ke halaman lain
-            // echo "<script type='text/javascript'>halamanPayment()</script>";
-            header("Location: home.php");
+            echo "<script>halamanPayment();</script>";
+            // header("Location: home.php");
             exit();
             
         } else {
@@ -43,3 +45,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
