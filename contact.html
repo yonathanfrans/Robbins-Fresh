@@ -17,16 +17,16 @@
     <header>
         <nav class="navbar">
             <div class="container nav-wrapper">
-                <a href="index.html" class="logo">
+                <a href="index.php" class="logo">
                     <img src="./assets/img/logo/logo-nav.png" alt="logo-nav">                     
                 </a>
                 <div class="navbar-wrapper">
                     <ul class="nav-list">
-                        <li class="nav-item"><a href="home.php" class="nav-link">Home</a></li>
-                        <li class="nav-item"><a href="home.php#menu" class="nav-link">Menu</a></li>
-                        <li class="nav-item"><a href="home.php#featured" class="nav-link">Featured</a></li>
+                        <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="index.php#menu" class="nav-link">Menu</a></li>
+                        <li class="nav-item"><a href="index.php#featured" class="nav-link">Featured</a></li>
                         <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                        <li class="nav-item"><a href="home.php#shop" class="nav-link">Shop</a></li>
+                        <li class="nav-item"><a href="index.php#shop" class="nav-link">Shop</a></li>
                     </ul>
                     <a href="contact.html" class="btn-contact">Contact Us</a>
                 </div>
